@@ -4,6 +4,9 @@ pipeline {
     stage('Build') {
       steps {
         echo ':: Build Stage Started ::'
+        echo '${ENV_VAR}'
+        sleep 2
+        echo '...next is deploy...'
       }
     }
 
@@ -25,5 +28,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    ENV_VAR = 'just another env variable'
   }
 }
